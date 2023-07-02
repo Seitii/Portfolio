@@ -56,6 +56,7 @@ body *{ /* * = todos os elementos */
 #profile{
     text-align: center; /* alinha o texto no centro */
     padding: 24px;
+   
 
 }
 
@@ -63,6 +64,8 @@ body *{ /* * = todos os elementos */
     /* display: block;  tira o espaço em branco do lado da imagem */
     width: 112px;
     /* margin: auto;   regra de display = visualização. INLINE OU BLOCK. alinhamento */ 
+    border-radius: 50%;
+    
 }
 
 #profile p{
@@ -70,6 +73,7 @@ body *{ /* * = todos os elementos */
     /* font-size: 24px;  tamanho da fonte */
     line-height: 24px; /* altura da linha */
     margin-top: 8px;
+    
 }
 
 #switch{

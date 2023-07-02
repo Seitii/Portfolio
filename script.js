@@ -8,7 +8,7 @@ function toggleMode() {
         image.setAttribute("src", "./assets/image4.jpg")
         image.setAttribute("alt", "Erro ao carregar imagem 1")
     }else{
-        image.setAttribute("src", "./assets/image1.jpg")
+        image.setAttribute("src", "./assets/image5.jpg")
         image.setAttribute("alt", "Erro ao carregar imagem 2")
     }
 }
