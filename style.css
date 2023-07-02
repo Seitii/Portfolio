@@ -37,6 +37,7 @@ body{
         imagem, não repete, posicionamento, tamanho
     */
     background: var(--bg-url) no-repeat top center / cover;
+    height: 100vh; /* 100% da altura da tela */
 }
 body *{ /* * = todos os elementos */
     font-family: 'Inter', sans-serif;
@@ -44,10 +45,12 @@ body *{ /* * = todos os elementos */
 }
 
 #container{
-    width: 360px;
+    width: 100%;
     /* margin: auto;  Centraliza o container no meio */ 
     margin: 56px auto 0px;
     padding: 0 24px;
+    max-width: 588px;
+
 }
 
 #profile{
@@ -88,12 +91,16 @@ body *{ /* * = todos os elementos */
     left: 0;
     z-index: 1;
     transform: translateY(-50%);
+    animation: slide-out 0.2s;
     
 }
 
 .light #switch button{
-    right: 0;
-    left: initial;
+    animation: slide-in 0.2s forwards;
+}
+
+#switch button:hover{
+    outline: 8px solid var(--highlight-color);
 }
 
 #switch span{
@@ -158,4 +165,32 @@ ul li a:hover{
 #social-links a:hover{
     background: var(--highlight-color);
     
+}
+
+/* Media queries == regras. Se caso for maior q o minimo de largura definido, realiza algo*/
+@media (min-width: 700px){
+    :root{
+        --bg-url: url(./assets/bg-desktop.jpg);
+    }
+    .light{
+        --bg-url: url(./assets/bg-desktop-light.jpg);
+    }
+}
+
+/*ANIMAÇÃO no botao escuro/claro */
+@keyframes slide-in {
+    from{
+        left: 0;
+    }
+    to{
+        left: 50%;
+    }
+}
+@keyframes slide-out {
+    from{
+        left: 50%; 
+    }
+    to{
+        left: 0;
+    }
 }
