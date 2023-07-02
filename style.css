@@ -1,0 +1,161 @@
+*{ /* reseta/tira todas as regras  */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* faz com que o padding e a borda não aumentem o tamanho do elemento */
+}
+:root{
+    --text-color: white;
+    --bg-url: urL(./assets/bg-mobile.jpg);
+    --stroke-color: rgba(255, 255, 255, 0.5);
+    --surface-color: rgba(255, 255, 255, 0.1);
+    --surface-color-hover: rgba(0, 0, 0, 0.02);
+    --highlight-color: rgba(255, 255, 255, 0.2);
+    --switch-bg-url: urL(./assets/moon-stars.svg);
+    
+}
+
+.light {
+    --text-color: black;
+    --bg-url: urL(./assets/bg-mobile-light.jpg);
+    --stroke-color: rgba(0, 0, 0, 0.5);
+    --surface-color: rgba(0, 0, 0, 0.05);
+    --surface-color-hover: rgba(0, 0, 0, 0.02);
+    --highlight-color: rgba(0, 0, 0, 0.1);
+    --switch-bg-url: urL(./assets/sun.svg);
+
+}
+
+body{
+    /*
+    background-image: url(./assets/bg-mobile.jpg);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover; cobre todo o espaço visivel
+    */
+
+    /* agrupa tudo em uma unica propriedade
+        imagem, não repete, posicionamento, tamanho
+    */
+    background: var(--bg-url) no-repeat top center / cover;
+}
+body *{ /* * = todos os elementos */
+    font-family: 'Inter', sans-serif;
+    color: var(--text-color);
+}
+
+#container{
+    width: 360px;
+    /* margin: auto;  Centraliza o container no meio */ 
+    margin: 56px auto 0px;
+    padding: 0 24px;
+}
+
+#profile{
+    text-align: center; /* alinha o texto no centro */
+    padding: 24px;
+
+}
+
+#profile img{ 
+    /* display: block;  tira o espaço em branco do lado da imagem */
+    width: 112px;
+    /* margin: auto;   regra de display = visualização. INLINE OU BLOCK. alinhamento */ 
+}
+
+#profile p{
+    font-weight: 500; /* peso da fonte */
+    /* font-size: 24px;  tamanho da fonte */
+    line-height: 24px; /* altura da linha */
+    margin-top: 8px;
+}
+
+#switch{
+    position: relative;
+    width: 64px; /* largura fixa e margem fixa */
+    margin: 4px auto; /* posicionamento/alinhamento de displayBLOCK*/
+}
+
+#switch button{ 
+    width: 32px; 
+    height: 32px;
+    background: white var(--switch-bg-url) no-repeat center;
+    border-radius: 50%;
+    border: 0;
+
+    
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 1;
+    transform: translateY(-50%);
+    
+}
+
+.light #switch button{
+    right: 0;
+    left: initial;
+}
+
+#switch span{
+    display: block;
+    width: 64px;
+    height: 24px;
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    --webkit-backdrop-filter: blur(4px);
+    border-radius: 9999px;
+
+}
+
+ul{
+    list-style: none; /* tira o marcador da lista */
+    display: flex;
+    flex-direction: column; /* alinha os itens verticalmente */
+    gap: 16px; /* espaço entre os itens */
+    padding: 24px 0;
+}
+
+ul li a{
+    display: flex; /* alinhamento de displayFLEX*/
+    align-items: center; /* alinha os itens verticalmente */
+    justify-content: center; /* alinha os itens horizontalmente */;
+    
+    padding: 16px 24px; /* 16px em cima e em baixo e 24px nas laterais */
+    
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    border-radius: 8px;
+
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+
+    text-decoration: none; /* tira o sublinhado do link */
+    font-weight: 500; 
+
+    transition: background all 0.2s; /* transição de 0.5 segundos */
+}   
+
+ul li a:hover{
+    background: var(--surface-color-hover);
+    border: 1.5px solid var(--text-color)
+}
+
+#social-links{
+    display: flex;
+    padding: 24px 0;
+    font-size: 24px;
+    justify-content: center;
+}
+#social-links a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+    border-radius: 50%;
+    transition: background 0.2s;
+}
+
+#social-links a:hover{
+    background: var(--highlight-color);
+    
+}
